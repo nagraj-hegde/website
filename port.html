@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nagaraj Shrikrishna Hegde — Software Engineer</title>
+  <meta name="description" content="Nagaraj Shrikrishna Hegde — Software Engineer. Building scalable, efficient, and elegant software solutions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #7c5cff;
+      --glass: rgba(255,255,255,0.05);
+      --text: #e6eef8;
+      --max-width: 1100px;
+    }
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --muted: #4b5563;
+      --accent: #5b21b6;
+      --glass: rgba(0,0,0,0.05);
+      --text: #111827;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .wrap { width: 100%; max-width: var(--max-width); }
+
+    /* HEADER */
+    header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 10px; }
+    .brand { display: flex; gap: 12px; align-items: center; }
+    .logo { width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), #3fb6ff); display: flex; align-items: center; justify-content: center; font-weight: 800; color: white; }
+    nav a { color: var(--muted); text-decoration: none; font-weight: 600; padding: 8px 12px; border-radius: 8px; }
+    nav a:hover { color: var(--text); background: var(--glass); }
+    .controls { display: flex; gap: 8px; align-items: center; }
+    .btn { background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 8px 12px; border-radius: 8px; cursor: pointer; color: var(--text); transition: background 0.2s; }
+    [data-theme="light"] .btn { border-color: rgba(0,0,0,0.1); }
+    .btn:hover { background: var(--glass); }
+
+    /* HERO */
+    .hero { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: center; margin-bottom: 28px; }
+    .hero-card { background: var(--card); padding: 28px; border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
+    [data-theme="light"] .hero-card { box-shadow: 0 6px 12px rgba(0,0,0,0.08); }
+    .hero h1 { margin: 0; font-size: clamp(26px, 4vw, 36px); }
+    .sub { color: var(--muted); margin-top: 8px; }
+    .hero p { color: var(--muted); margin-top: 12px; }
+    .hero-cta { margin-top: 18px; display: flex; gap: 12px; }
+    .primary { background: linear-gradient(90deg,var(--accent),#3fb6ff); color: white; padding: 10px 14px; border-radius: 10px; border: none; cursor: pointer; }
+
+    .avatar { width: 100%; max-width: 260px; margin-left: auto; }
+    .avatar__img { width: 100%; border-radius: 12px; border: 2px solid var(--glass); }
+
+    /* SECTIONS */
+    section { margin-bottom: 32px; }
+    h2.section-title { margin-bottom: 12px; font-size: 20px; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1fr 260px; gap: 18px; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill { padding: 8px 10px; border-radius: 8px; background: var(--glass); color: var(--text); font-weight: 600; }
+
+    /* FILTER BUTTONS */
+    .filter-bar { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+    .filter-btn { padding: 6px 12px; border-radius: 8px; border: none; background: var(--glass); color: var(--text); cursor: pointer; font-weight: 600; }
+    .filter-btn.active { background: var(--accent); color: white; }
+
+    /* PROJECTS */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 14px; }
+    .card { background: var(--card); padding: 14px; border-radius: 12px; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-4px); }
+    .project-thumb { height: 140px; border-radius: 8px; background: var(--glass); display: flex; align-items: center; justify-content: center; color: var(--muted); font-weight: 600; }
+    .techs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .tech { font-size: 12px; padding: 6px 8px; border-radius: 8px; background: var(--glass); }
+    .links { margin-top: 10px; display: flex; gap: 8px; }
+    .link { font-weight: 700; font-size: 13px; text-decoration: none; color: var(--accent); }
+
+    /* EXPERIENCE */
+    .timeline { display: flex; flex-direction: column; gap: 12px; }
+    .entry { display: flex; gap: 12px; }
+    .marker { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: 8px; }
+    .details { background: var(--card); padding: 12px; border-radius: 10px; flex: 1; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 360px; gap: 18px; }
+    input, textarea { background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; color: var(--text); }
+    [data-theme="light"] input, [data-theme="light"] textarea { border-color: rgba(0,0,0,0.1); }
+    textarea { min-height: 120px; }
+
+    footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; color: var(--muted); margin-top: 20px; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" id="app">
+    <header>
+      <div class="brand">
+        <div class="logo">NH</div>
+        <div>
+          <div style="font-weight:700">Nagaraj Shrikrishna Hegde</div>
+          <div class="muted" style="font-size:12px">Software Engineer</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="controls">
+        <button class="btn" id="themeToggle">🌗</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Nagaraj Shrikrishna Hegde — Software Engineer</h1>
+        <div class="sub">Building scalable, efficient, and elegant software solutions.</div>
+        <p>I build backend systems, data pipelines, and modern web apps. I enjoy designing clean APIs, working with real-time data. Passionate about cloud infrastructure, automation, and developer experience.</p>
+        <div class="hero-cta">
+          <a class="primary" href="#projects">View Projects</a>
+          <a class="btn" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <aside class="avatar"><img src="https://images.unsplash.com/photo-1531123414780-f0b0a3ced3b5?q=80&w=600" class="avatar__img" alt="Profile photo"></aside>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div>
+          <p>I started coding by automating small tasks and eventually contributing to larger systems. I specialize in backend engineering, cloud, and real-time data processing. My work emphasizes reliability, maintainability, and scalability. I enjoy writing performant code, and mentoring junior engineers.</p>
+          <div style="margin-top:12px"><strong>Key skills:</strong></div>
+          <div class="skill-list">
+            <div class="skill">JavaScript</div><div class="skill">Python</div><div class="skill">React</div><div class="skill">Node.js</div><div class="skill">GCP</div><div class="skill">BigQuery</div><div class="skill">Docker</div><div class="skill">SQL</div>
+          </div>
+        </div>
+        <div class="card">
+          <div><strong>Quick facts</strong></div>
+          <div class="muted" style="margin-top:8px">Based in India • 3 years experience • Open to new roles</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="backend">Backend</button>
+        <button class="filter-btn" data-filter="frontend">Frontend</button>
+        <button class="filter-btn" data-filter="data">Data</button>
+      </div>
+
+      <div class="projects-grid">
+        <article class="card" data-tags="data backend">
+          <div class="project-thumb">Realtime Vehicle Telemetry</div>
+          <div class="project-meta">
+            <div><strong>Realtime Vehicle Telemetry</strong></div>
+            <div class="muted">Streaming telemetry using MQTT → Pub/Sub → BigQuery</div>
+            <div class="techs"><div class="tech">MQTT</div><div class="tech">Apache Beam</div><div class="tech">BigQuery</div></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="frontend backend">
+          <div class="project-thumb">EV Marketplace</div>
+          <div class="project-meta">
+            <div><strong>EV Marketplace</strong></div>
+            <div class="muted">Next.js & Node.js full-stack platform for vehicle listings</div>
+            <div class="techs"><div class="tech">Next.js</div><div class="tech">Node.js</div><div class="tech">MySQL</div></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="backend">
+          <div class="project-thumb">Developer CLI</div>
+          <div class="project-meta">
+            <div><strong>Developer CLI Tools</strong></div>
+            <div class="muted">Automation utilities for development & CI</div>
+            <div class="techs"><div class="tech">Node.js</div><div class="tech">TypeScript</div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="entry"><div class="marker"></div><div class="details"><strong>Data Engineer — Greaves Electric Mobility</strong><div class="muted">March 2023 – Present</div><div class="muted">Worked on MQTT, Pub/Sub, BigQuery pipelines, and distributed data processing.</div></div></div>
+        <div class="entry"><div class="marker"></div><div class="details"><strong>Software Product Intern — Vyoma Linguistic Labs</strong><div class="muted">Sep 2022 – Dec 2022</div><div class="muted">Built APIs and scalable systems using Node.js, Express, and Docker.</div></div></div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="card"><strong>Bachelor of Engineering in ISE — R.V College of Engineering</strong><div class="muted">Graduation: 2023</div></div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <form id="contactForm">
+          <label>Name</label><input id="name" required>
+          <label>Email</label><input id="email" type="email" required>
+          <label>Message</label><textarea id="message" required></textarea>
+          <button class="primary" id="sendBtn">Send</button>
+          <div id="formStatus" class="muted"></div>
+        </form>
+        <aside class="card">
+          <strong>Connect with me</strong>
+          <div class="muted" style="margin-top:8px">Email: <a class="link" href="mailto:nagarajhegde18275@gmail.com">nagarajhegde18275@gmail.com</a></div>
+          <div class="muted">LinkedIn: <a class="link" href="https://in.linkedin.com/in/nagaraj-hegde-21a183207" rel="noopener noreferrer" target="_blank">Nagaraj Hegde</a></div>
+          <div class="muted">GitHub: <a class="link" href="https://github.com/nagraj-hegde" rel="noopener noreferrer" target="_blank">github.com/nagraj-hegde</a></div>
+          <div style="margin-top:10px"><a class="btn" href="#" download>Download Resume</a></div>
+        </aside>
+      </div>
+    </section>
+
+    <footer><div class="muted">© <span id="year"></span> Nagaraj Shrikrishna Hegde ❤️</div></footer>
+  </div>
+
+  <script>
+    // THEME TOGGLE
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+    if(saved === 'light') root.setAttribute('data-theme', 'light');
+    btn.onclick = () => {
+      if(root.getAttribute('data-theme') === 'light'){ root.removeAttribute('data-theme'); localStorage.removeItem('theme'); }
+      else { root.setAttribute('data-theme', 'light'); localStorage.setItem('theme','light'); }
+    };
+
+    // YEAR
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // PROJECT FILTERING
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.projects-grid .card');
+    filterBtns.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        filterBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        cards.forEach(c=>{
+          const tags = c.dataset.tags.split(' ');
+          c.style.display = (f==='all'||tags.includes(f))?'block':'none';
+        });
+      });
+    });
+
+    // CONTACT (demo mailto)
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    document.getElementById('sendBtn').addEventListener('click',e=>{
+      e.preventDefault();
+      const name=form.name.value.trim(), email=form.email.value.trim(), msg=form.message.value.trim();
+      if(!name||!email||!msg){status.textContent='Please fill all fields.';return;}
+      window.location.href=`mailto:youremail@example.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(msg)}%0A%0A${email}`;
+      status.textContent='Opened email client.';
+    });
+  </script>
+</body>
+</html>
