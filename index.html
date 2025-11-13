@@ -71,6 +71,8 @@
     .about-grid { display: grid; grid-template-columns: 1fr 260px; gap: 18px; }
     .skill-list { display: flex; flex-wrap: wrap; gap: 8px; }
     .skill { padding: 8px 10px; border-radius: 8px; background: var(--glass); color: var(--text); font-weight: 600; }
+    .skills-category { margin-top: 12px; }
+    .skills-category strong { display: block; margin-bottom: 6px; }
 
     /* FILTER BUTTONS */
     .filter-bar { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
@@ -145,7 +147,7 @@
           <p>I started coding by automating small tasks and eventually contributing to larger systems. I specialize in backend engineering, cloud, and real-time data processing. My work emphasizes reliability, maintainability, and scalability. I enjoy writing performant code, and mentoring junior engineers.</p>
           <div style="margin-top:12px"><strong>Key skills:</strong></div>
           <div class="skill-list">
-            <div class="skill">JavaScript</div><div class="skill">Python</div><div class="skill">React</div><div class="skill">Node.js</div><div class="skill">GCP</div><div class="skill">BigQuery</div><div class="skill">Docker</div><div class="skill">SQL</div>
+            <div class="skill">Java</div><div class="skill">JavaScript</div><div class="skill">Python</div><div class="skill">NextJS</div><div class="skill">NodeJS</div><div class="skill">GCP</div><div class="skill">SQL</div><div class="skill">Linux</div><div class="skill">Git</div><div class="skill">Android Studio</div><div class="skill">Docker</div>
           </div>
         </div>
         <div class="card">
@@ -162,33 +164,71 @@
         <button class="filter-btn" data-filter="backend">Backend</button>
         <button class="filter-btn" data-filter="frontend">Frontend</button>
         <button class="filter-btn" data-filter="data">Data</button>
+        <button class="filter-btn" data-filter="analysis">Analysis</button>
+        <button class="filter-btn" data-filter="personal">Personal</button>
       </div>
 
       <div class="projects-grid">
         <article class="card" data-tags="data backend">
-          <div class="project-thumb">Realtime Vehicle Telemetry</div>
+          <div class="project-thumb">Realtime Vehicle Telemetry Data Pipeline</div>
           <div class="project-meta">
-            <div><strong>Realtime Vehicle Telemetry</strong></div>
-            <div class="muted">Streaming telemetry using MQTT → Pub/Sub → BigQuery</div>
+            <div><strong>Realtime Vehicle Telemetry Data Pipeline</strong></div>
+            <div class="muted">Streaming telemetric CAN data using MQTT → Pub/Sub → BigQuery</div>
             <div class="techs"><div class="tech">MQTT</div><div class="tech">Apache Beam</div><div class="tech">BigQuery</div></div>
           </div>
         </article>
 
         <article class="card" data-tags="frontend backend">
-          <div class="project-thumb">EV Marketplace</div>
+          <div class="project-thumb">Dashboard</div>
           <div class="project-meta">
-            <div><strong>EV Marketplace</strong></div>
-            <div class="muted">Next.js & Node.js full-stack platform for vehicle listings</div>
-            <div class="techs"><div class="tech">Next.js</div><div class="tech">Node.js</div><div class="tech">MySQL</div></div>
+            <div><strong>Dashboard</strong></div>
+            <div class="muted">Next.js & Node.js full-stack platform for vehicle monitoring, analysis, and reporting</div>
+            <div class="techs"><div class="tech">Next.js</div><div class="tech">Node.js</div><div class="tech">MySQL</div><div class="tech">CloudSQL</div><div class="tech">BigQuery</div><div class="tech">Firebase</div></div>
           </div>
         </article>
 
         <article class="card" data-tags="backend">
-          <div class="project-thumb">Developer CLI</div>
+          <div class="project-thumb">Backend APIs</div>
           <div class="project-meta">
-            <div><strong>Developer CLI Tools</strong></div>
-            <div class="muted">Automation utilities for development & CI</div>
-            <div class="techs"><div class="tech">Node.js</div><div class="tech">TypeScript</div></div>
+            <div><strong>Multiple Backend APIs</strong></div>
+            <div class="muted">Multiple Backend APIs for Mobile Application, dashboard, salesforce data migration</div>
+            <div class="techs"><div class="tech">Node.js</div><div class="tech">MySQL</div><div class="tech">CloudSQL</div><div class="tech">BigQuery</div></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="analysis">
+          <div class="project-thumb">Predictive analysis of faults in EVs</div>
+          <div class="project-meta">
+            <div><strong>Predictive analysis of faults in Electric Vehicles</strong></div>
+            <div class="muted">BigQuery → LLM → Training → Deployment → Behaviour analysis → Prediction of alerts/ faults/ anomalies in EVs</div>
+            <div class="techs"><div class="tech">BigQuery</div><div class="tech">AI</div><div class="tech">LLM</div></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="analysis personal">
+          <div class="project-thumb">Skin Cancer Classification</div>
+          <div class="project-meta">
+            <div><strong>Skin Cancer Classification Using Machine Learning</strong></div>
+            <div class="muted">Skin lasion Images → ML Model(s) → Classification</div>
+            <div class="techs"><div class="tech">ML</div><div class="tech">Image processing</div><div class="tech">CNN</div><div class="tech">ANN</div><div class="tech">SVM</div><div class="tech">KNN</div></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="analysis personal">
+          <div class="project-thumb">De-Identification of Medical Records</div>
+          <div class="project-meta">
+            <div><strong>De-Identification of Medical Records Using Machine Learning</strong></div>
+            <div class="muted">Personal Health Information → ML Model(s) → Encryption of Personal Sensitive Data</div>
+            <div class="techs"><div class="tech">ML</div><div class="tech">NLP</div><div class="tech">LLM</div></div>
+          </div>
+        </article>
+
+        <article class="card" data-tags="analysis personal">
+          <div class="project-thumb">Visualization and Analysis Tool for Weather Informatics</div>
+          <div class="project-meta">
+            <div><strong>Prakruti- Visualization and Analysis Tool for Weather Informatics</strong></div>
+            <div class="muted">Weather data file (.nc format) → Grads Script → jpeg image</div>
+            <div class="techs"><div class="tech">C Sharp</div><div class="tech">Big data</div><div class="tech">Data processing</div><div class="tech">Image processing</div></div>
           </div>
         </article>
       </div>
