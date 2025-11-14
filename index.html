@@ -83,7 +83,21 @@
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 14px; }
     .card { background: var(--card); padding: 14px; border-radius: 12px; transition: transform 0.2s; }
     .card:hover { transform: translateY(-4px); }
-    .project-thumb { height: 140px; border-radius: 8px; background: var(--glass); display: flex; align-items: center; justify-content: center; color: var(--muted); font-weight: 600; }
+    .project-thumb { height: 140px; border-radius: 8px; background: var(--glass); display: flex; align-items: center; justify-content: center; color: var(--muted); font-weight: 600; 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    /* dark overlay for readability */
+      position: relative;
+      overflow: hidden; }
+    .project-thumb::after { content: ""; position: absolute; inset: 0; 
+    background: rgba(0,0,0,0.6); /* 70% blend */ 
+    mix-blend-mode: multiply; }
+
+.project-thumb > * {
+  position: relative; /* Make text appear above overlay */
+  z-index: 2;
+}
     .techs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
     .tech { font-size: 12px; padding: 6px 8px; border-radius: 8px; background: var(--glass); }
     .links { margin-top: 10px; display: flex; gap: 8px; }
@@ -170,7 +184,9 @@
 
       <div class="projects-grid">
         <article class="card" data-tags="data backend">
-          <div class="project-thumb">Realtime Vehicle Telemetry Data Pipeline</div>
+          <div class="project-thumb" style="background-image:url('https://i.ibb.co/4wWk3X8K/pipeline.png');">
+            <!-- <span>Realtime Vehicle Telemetry Data Pipeline</span> -->
+          </div>
           <div class="project-meta">
             <div><strong>Realtime Vehicle Telemetry Data Pipeline</strong></div>
             <div class="muted">Streaming telemetric CAN data using MQTT → Pub/Sub → BigQuery</div>
@@ -179,7 +195,9 @@
         </article>
 
         <article class="card" data-tags="frontend backend">
-          <div class="project-thumb">Dashboard</div>
+          <div class="project-thumb" style="background-image:url('https://i.ibb.co/j9rLv0LV/dashboard.jpg');">
+            <!-- <span>Dashboard</span> -->
+          </div>
           <div class="project-meta">
             <div><strong>Dashboard</strong></div>
             <div class="muted">Next.js & Node.js full-stack platform for vehicle monitoring, analysis, and reporting</div>
@@ -188,7 +206,9 @@
         </article>
 
         <article class="card" data-tags="backend">
-          <div class="project-thumb">Backend APIs</div>
+          <div class="project-thumb" style="background-image:url('https://i.ibb.co/qLbvBvcP/backendapi.png');">
+            <!-- <span>Backend APIs</span> -->
+          </div>
           <div class="project-meta">
             <div><strong>Multiple Backend APIs</strong></div>
             <div class="muted">Multiple Backend APIs for Mobile Application, dashboard, salesforce data migration</div>
@@ -197,7 +217,9 @@
         </article>
 
         <article class="card" data-tags="analysis">
-          <div class="project-thumb">Predictive analysis of faults in EVs</div>
+          <div class="project-thumb" style="background-image:url('https://i.ibb.co/20MzM5sr/predictive.png');">
+            <!-- <span>Predictive analysis of faults in EVs</span> -->
+          </div>
           <div class="project-meta">
             <div><strong>Predictive analysis of faults in Electric Vehicles</strong></div>
             <div class="muted">BigQuery → LLM → Training → Deployment → Behaviour analysis → Prediction of alerts/ faults/ anomalies in EVs</div>
@@ -206,7 +228,9 @@
         </article>
 
         <article class="card" data-tags="analysis personal">
-          <div class="project-thumb">Skin Cancer Classification</div>
+          <div class="project-thumb" style="background-image:url('https://i.ibb.co/RppX3gFt/skincan.png');">
+            <!-- <span>Skin Cancer Classification</span> -->
+          </div>
           <div class="project-meta">
             <div><strong>Skin Cancer Classification Using Machine Learning</strong></div>
             <div class="muted">Skin lasion Images → ML Model(s) → Classification</div>
@@ -215,7 +239,9 @@
         </article>
 
         <article class="card" data-tags="analysis personal">
-          <div class="project-thumb">De-Identification of Medical Records</div>
+          <div class="project-thumb" style="background-image:url('https://i.ibb.co/BVmVXM4t/physical.png');">
+            <!-- <span>De-Identification of Medical Records</span> -->
+          </div>
           <div class="project-meta">
             <div><strong>De-Identification of Medical Records Using Machine Learning</strong></div>
             <div class="muted">Personal Health Information → ML Model(s) → Encryption of Personal Sensitive Data</div>
@@ -224,7 +250,9 @@
         </article>
 
         <article class="card" data-tags="analysis personal">
-          <div class="project-thumb">Visualization and Analysis Tool for Weather Informatics</div>
+          <div class="project-thumb" style="background-image:url('https://i.ibb.co/KzsyTrnx/weather.jpg');">
+            <!-- <span>Visualization and Analysis Tool for Weather Informatics</span> -->
+          </div>
           <div class="project-meta">
             <div><strong>Prakruti- Visualization and Analysis Tool for Weather Informatics</strong></div>
             <div class="muted">Weather data file (.nc format) → Grads Script → jpeg image</div>
@@ -312,4 +340,3 @@
   </script>
 </body>
 </html>
-
